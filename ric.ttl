@@ -1,0 +1,222 @@
+@prefix : <http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl> .
+
+<https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#followsProcedure
+
+:followsProcedure rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:range :EnforcementProcedure ;
+                  
+                  rdfs:domain :Passenger .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasConstraint
+
+:hasConstraint rdf:type owl:ObjectProperty ;
+               
+               rdfs:range :Constraint ;
+               
+               rdfs:domain :Right .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasEnforcementProcedure
+
+:hasEnforcementProcedure rdf:type owl:ObjectProperty ;
+                         
+                         rdfs:range :EnforcementProcedure ;
+                         
+                         rdfs:domain :Right .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasException
+
+:hasException rdf:type owl:ObjectProperty ;
+              
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              
+              rdfs:range :Exception ;
+              
+              rdfs:domain :Right .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasLegalSource
+
+:hasLegalSource rdf:type owl:ObjectProperty ;
+                
+                rdfs:range :LegalSource ;
+                
+                rdfs:domain :Right .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasRequisite
+
+:hasRequisite rdf:type owl:ObjectProperty ;
+              
+              rdfs:range :Requite ;
+              
+              rdfs:domain :Right .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasTypeOfIncident
+
+:hasTypeOfIncident rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   
+                   rdfs:domain :AirTransportPassengerIncident .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#isEntitledTo
+
+:isEntitledTo rdf:type owl:ObjectProperty ;
+              
+              rdfs:domain :Passenger ;
+              
+              rdfs:range :Right .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#mayTrigger
+
+:mayTrigger rdf:type owl:ObjectProperty ;
+            
+            rdfs:domain :AirTransportPassengerIncident ;
+            
+            rdfs:range :Right .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#subjectTo
+
+:subjectTo rdf:type owl:ObjectProperty .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#AirTransportPassengerIncident
+
+:AirTransportPassengerIncident rdf:type owl:Class .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#BaggageIncident
+
+:BaggageIncident rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :AirTransportPassengerIncident .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#BaggageLiability
+
+:BaggageLiability rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :Requite .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Constraint
+
+:Constraint rdf:type owl:Class .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#EnforcementProcedure
+
+:EnforcementProcedure rdf:type owl:Class .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Exception
+
+:Exception rdf:type owl:Class .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#FlightIncident
+
+:FlightIncident rdf:type owl:Class ;
+                
+                rdfs:subClassOf :AirTransportPassengerIncident .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#FurtherInterpretation
+
+:FurtherInterpretation rdf:type owl:Class .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#LegalSource
+
+:LegalSource rdf:type owl:Class .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Passenger
+
+:Passenger rdf:type owl:Class .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Requite
+
+:Requite rdf:type owl:Class .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Right
+
+:Right rdf:type owl:Class .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#ServiceIncident
+
+:ServiceIncident rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :AirTransportPassengerIncident .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#TerritorialApplicability
+
+:TerritorialApplicability rdf:type owl:Class ;
+                          
+                          rdfs:subClassOf :Requite .
+
+
+
+
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
+
