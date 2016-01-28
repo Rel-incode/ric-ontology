@@ -11,16 +11,33 @@
 
 #################################################################
 #
-#    Classes --- victor test
+#    Object Properties
 #
 #################################################################
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#BadQualityService
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#happensIn
 
-:BadQualityService rdf:type owl:Class ;
-                   
-                   rdfs:subClassOf :ServiceIncident .
+:happensIn rdf:type owl:ObjectProperty ;
+           
+           rdfs:domain :AirTransportPassengerIncident .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#AirTransportPassengerIncident
+
+:AirTransportPassengerIncident rdf:type owl:Class ;
+                               
+                               rdfs:comment "Incident related to the air transport passenger domain" .
 
 
 
@@ -28,7 +45,9 @@
 
 :BaggageIncident rdf:type owl:Class ;
                  
-                 rdfs:subClassOf :Incident .
+                 rdfs:subClassOf :AirTransportPassengerIncident ;
+                 
+                 rdfs:comment "Incident related to  mishandled baggage, which was lost, delayed, destroyed or damaged" .
 
 
 
@@ -36,7 +55,9 @@
 
 :BankrupcyIncident rdf:type owl:Class ;
                    
-                   rdfs:subClassOf :Incident .
+                   rdfs:subClassOf :FlightIncident ;
+                   
+                   rdfs:comment "When an air carrier has insufficient assets to meet all debts, or being unable to pay debts as and when they are due, Council Regulation  (EC) No 1346/2000 of 29 May 2000 on insolvency proceedings" .
 
 
 
@@ -44,7 +65,21 @@
 
 :CancelledFlight rdf:type owl:Class ;
                  
-                 rdfs:subClassOf :FlightIncident .
+                 rdfs:subClassOf :FlightIncident ;
+                 
+                 rdfs:comment """Means the non-operation of a flight which was previously planned and on which at least one place was reserved, Article(2)(l) (EC) Regulation 261/2004. 
+
+Broader interpretation from the Court : ‘cancellation’ as meaning that is does not refer exclusively to the situation in which the aeroplane in question fails to take off at all. That concept also covers the case in which an aeroplane took off but, for whatever reason, was subsequently forced to return to the airport of departure where its passengers were transferred to other flights, Aurora Sousa Rodríguez and Others v Air France SA, Judgment in Case C-83/10, 13/10/2011""" .
+
+
+
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#CustomerServiceInsatisfaction
+
+:CustomerServiceInsatisfaction rdf:type owl:Class ;
+                               
+                               rdfs:subClassOf :ServiceIncident ;
+                               
+                               rdfs:comment "When the passenger was not satisfied with the customer service provided by the air carrier in relation to the purchase of a service up to the point of delivery of the service." .
 
 
 
@@ -52,7 +87,9 @@
 
 :DamagedBagagge rdf:type owl:Class ;
                 
-                rdfs:subClassOf :BaggageIncident .
+                rdfs:subClassOf :BaggageIncident ;
+                
+                rdfs:comment "Physical damage to baggage and/or its contents. IATA PSCRM, Reso780" .
 
 
 
@@ -60,7 +97,9 @@
 
 :DelayedBaggage rdf:type owl:Class ;
                 
-                rdfs:subClassOf :BaggageIncident .
+                rdfs:subClassOf :BaggageIncident ;
+                
+                rdfs:comment "A piece(s) of baggage which fails to arrive at the airport of destination on the same flight as the passenger, but is subsequently delivered. IATA PSCRM, Reso780" .
 
 
 
@@ -68,7 +107,9 @@
 
 :DelayedFlight rdf:type owl:Class ;
                
-               rdfs:subClassOf :FlightIncident .
+               rdfs:subClassOf :FlightIncident ;
+               
+               rdfs:comment "When an operating air carrier reasonably expects a flight to be delayed beyond its scheduled time, Article 6 Regulation 261/2004" .
 
 
 
@@ -76,7 +117,19 @@
 
 :DeniedFlight rdf:type owl:Class ;
               
-              rdfs:subClassOf :FlightIncident .
+              rdfs:subClassOf :FlightIncident ;
+              
+              rdfs:comment "Denied Flight or denied boarding means a refusal to carry passengers on a flight, although they have presented themselves for boarding under the conditions laid down in Article 3(2), except where there are reasonable grounds to deny them boarding, such as reasons of health, safety or security, or inadequate travel documentation, Article (2)(j) Regulation (EC) 261/2004.                                                                                                                                                                                                                                                                                                    Broader interpretation from the CJEU: \" the concept of ‘denied boarding’ relates not only to cases of overbooking, denied boarding covers all circumstances in which an air carrier refuses to carry a passenger, such as those concerning other grounds, such as operational reasons\", German Rodriguez Cachafeiro, Maria de los Reyes Martinez-Reboredo Varela-Villamor v Iberia Lineas Aereas de Espana SA, Case C-321/11, 04/10/2012,  and C-22/11 (Finnair Oyj vs. Timy Lassooy)" .
+
+
+
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#DestroyedBagagge
+
+:DestroyedBagagge rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :BaggageIncident ;
+                  
+                  rdfs:comment "A baggage which became unusable" .
 
 
 
@@ -84,7 +137,9 @@
 
 :Downgrading rdf:type owl:Class ;
              
-             rdfs:subClassOf :SeatDisplacement .
+             rdfs:subClassOf :SeatMisplacement ;
+             
+             rdfs:comment "When an operating air carrier places a passenger in a class lower than that for which the ticket was purchased,Article 10 (2)  Regulation 261/2004" .
 
 
 
@@ -98,13 +153,19 @@
 
 :FlightIncident rdf:type owl:Class ;
                 
-                rdfs:subClassOf :Incident .
+                rdfs:subClassOf :AirTransportPassengerIncident ;
+                
+                rdfs:comment "Incident related to the provision of the flight" .
 
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#Incident
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#FollowingDayDelayDeparture
 
-:Incident rdf:type owl:Class .
+:FollowingDayDelayDeparture rdf:type owl:Class ;
+                            
+                            rdfs:subClassOf :DelayedFlight ;
+                            
+                            rdfs:comment "When the reasonably expected time of departure is at least the day after the time of departure previously announced, Art. 6 (1) (ii) EC Regulation 261/2004" .
 
 
 
@@ -112,7 +173,29 @@
 
 :Irresponsiveness rdf:type owl:Class ;
                   
-                  rdfs:subClassOf :ServiceIncident .
+                  rdfs:subClassOf :ServiceIncident ;
+                  
+                  rdfs:comment "Incident related to the difficulties in getting information from the air carrier on where and how to complain and on claim redress (e.g. no phone number, no email or all telephone lines busy, no response to the complaint)." .
+
+
+
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#LongDelayedAtArrival
+
+:LongDelayedAtArrival rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :DelayedFlight ;
+                      
+                      rdfs:comment "Interpretation from the CJEU: When an operating air carrier  reach their final destination three hours or more after the scheduled arrival time (originally scheduled by the air carrier), Joined Cases C-402/07 (Sturgeon vs. Condor Flugdienst GmbH) and C-432/07 (Böck/Lepuschitz vs. Air France); Joined Cases C-581/10 Nelson and Others v Deutsche Lufthansa AG and C-629/10 Tui Travel, British Airways, EasyJet, IATA vs. Civil Aviation Authority" .
+
+
+
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#LongDelayedAtDeparture
+
+:LongDelayedAtDeparture rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf :DelayedFlight ;
+                        
+                        rdfs:comment "When an operating air carrier reasonably expects a flight to be delayed at departure at least five hours or more, Art. 6 (1) (iii) (EC) Regulation 261/2004" .
 
 
 
@@ -120,15 +203,19 @@
 
 :LostBaggage rdf:type owl:Class ;
              
-             rdfs:subClassOf :BaggageIncident .
+             rdfs:subClassOf :BaggageIncident ;
+             
+             rdfs:comment "A piece(s) of baggage which is irretrievably lost. IATA PSCRM, Reso780" .
 
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#SeatDisplacement
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#SeatMisplacement
 
-:SeatDisplacement rdf:type owl:Class ;
+:SeatMisplacement rdf:type owl:Class ;
                   
-                  rdfs:subClassOf :ServiceIncident .
+                  rdfs:subClassOf :ServiceIncident ;
+                  
+                  rdfs:comment "When an operating air carrier misplaces a passenger in a class different than that for which the ticket was purchased.Article 10  Regulation 261/2004" .
 
 
 
@@ -136,7 +223,28 @@
 
 :ServiceIncident rdf:type owl:Class ;
                  
-                 rdfs:subClassOf :Incident .
+                 rdfs:subClassOf :AirTransportPassengerIncident ;
+                 
+                 rdfs:comment "Incident related to the quality of the service" .
+
+
+
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#ShortDelayedAtDeparture
+
+:ShortDelayedAtDeparture rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :DelayedFlight ;
+                         
+                         rdfs:comment """When an operating air carrier reasonably expects a flight to be delayed beyond its scheduled time of departure,  
+
+(a) for two hours or more in the case of flights of 1 500 kilometres
+or less; or
+(b) for three hours or more in the case of all intra-Community
+flights of more than 1 500 kilometres and of all other
+flights between 1 500 and 3 500 kilometres; or
+(c) for four hours or more in the case of all flights not falling
+under (a) or (b),
+Article 6 (1) (EC) Regulation 261/2004""" .
 
 
 
@@ -144,7 +252,19 @@
 
 :UnfairCommercialPractices rdf:type owl:Class ;
                            
-                           rdfs:subClassOf :ServiceIncident .
+                           rdfs:subClassOf :ServiceIncident ;
+                           
+                           rdfs:comment "Commercial practices which are unhonest practises; misleading commercial practices (such as false claims, deceiving information or leaving out important information that would affect the consumer decision to buy something); and aggressive sales techniques that harass the consumer into buying something under pressure, Article 5 of the Directive 2005/29/EC of 11 May 2005 concerning unfair business-to-consumer commercial practices in the internal market." .
+
+
+
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#UnfairContractTerms
+
+:UnfairContractTerms rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :ServiceIncident ;
+                     
+                     rdfs:comment "A contractual term shall be regarded as unfair if, contrary to the requirement of good faith, it causes a significant  imbalance in the parties' rights and obligations arising under the contract, to the detriment of the consumer, Article 3 (1) Directive of Unfair Contract terms 93/ 13/EEC" .
 
 
 
@@ -152,11 +272,12 @@
 
 :Upgrading rdf:type owl:Class ;
            
-           rdfs:subClassOf :SeatDisplacement .
+           rdfs:subClassOf :SeatMisplacement ;
+           
+           rdfs:comment "When an operating air carrier places a passenger in a class higher than that for which the ticket was purchased, Article 10 (1)  Regulation 261/2004" .
 
 
 
 
 ###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
-
 
