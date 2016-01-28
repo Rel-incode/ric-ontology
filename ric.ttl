@@ -1,22 +1,31 @@
 @prefix : <http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix ric: <https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix dct: <http://purl.org/dc/terms/> .
 @base <https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl> .
 
 <https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl> rdf:type owl:Ontology ;
-	dct:title "RIC Ontology" ;
-	dct:creator "Cristiana Santos" ;
-	owl:versionInfo "1.0.2" ;
-	dct:date "2016-01-28" ;
-	dct:rights "This ontology is distributed under a Creative Commons CC-BY 4.0 license - https://creativecommons.org/licenses/by/4.0/";
-	dct:license <https://creativecommons.org/licenses/by/4.0/> ;
-	dct:language "en" ;
-	dct:contibutor "Pompeu Casanovas", "Victor Rodriguez" .
+                                                                           
+                                                                           owl:versionInfo "1.0.2" ;
+                                                                           
+                                                                           dct:creator "Cristiana Santos" ;
+                                                                           
+                                                                           dct:title "RIC Ontology" ;
+                                                                           
+                                                                           dct:language "en" ;
+                                                                           
+                                                                           dct:contibutor "Pompeu Casanovas" ,
+                                                                                          "Victor Rodriguez" ;
+                                                                           
+                                                                           dct:rights "This ontology is distributed under a Creative Commons CC-BY 4.0 license - https://creativecommons.org/licenses/by/4.0/" ;
+                                                                           
+                                                                           dct:date "2016-01-28" ;
+                                                                           
+                                                                           dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
 
 #################################################################
@@ -30,9 +39,7 @@
 
 :followsProcedure rdf:type owl:ObjectProperty ;
                   
-                  rdfs:range :EnforcementProcedure ;
-                  
-                  rdfs:domain :Passenger .
+                  rdfs:range :EnforcementProcedure .
 
 
 
@@ -102,8 +109,6 @@
 
 :isEntitledTo rdf:type owl:ObjectProperty ;
               
-              rdfs:domain :Passenger ;
-              
               rdfs:range :Right .
 
 
@@ -139,14 +144,6 @@
 
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#BaggageIncident
-
-:BaggageIncident rdf:type owl:Class ;
-                 
-                 rdfs:subClassOf :AirTransportPassengerIncident .
-
-
-
 ###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#BaggageLiability
 
 :BaggageLiability rdf:type owl:Class ;
@@ -173,14 +170,6 @@
 
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#FlightIncident
-
-:FlightIncident rdf:type owl:Class ;
-                
-                rdfs:subClassOf :AirTransportPassengerIncident .
-
-
-
 ###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#FurtherInterpretation
 
 :FurtherInterpretation rdf:type owl:Class .
@@ -193,12 +182,6 @@
 
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Passenger
-
-:Passenger rdf:type owl:Class .
-
-
-
 ###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Requite
 
 :Requite rdf:type owl:Class .
@@ -208,14 +191,6 @@
 ###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Right
 
 :Right rdf:type owl:Class .
-
-
-
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#ServiceIncident
-
-:ServiceIncident rdf:type owl:Class ;
-                 
-                 rdfs:subClassOf :AirTransportPassengerIncident .
 
 
 

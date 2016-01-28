@@ -1,13 +1,24 @@
-@prefix : <http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#> .
+@prefix : <https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ric: <https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@base <https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl> .
 
-<http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217> rdf:type owl:Ontology .
-
+<https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl> rdf:type owl:Ontology ;
+	dct:title "RIC-ATPI Ontology" ;
+	rdfs:comment "Ontology of Relevant Legal Information in Consumer Disputes for the Air Transport Passenger Incidents" ;
+	rdfs:label "RIC-ATPI Ontology" ;
+	dct:creator "Cristiana Santos" ;
+	owl:versionInfo "1.0.2" ;
+	dct:date "2016-01-28" ;
+	dct:rights "This ontology is distributed under a Creative Commons CC-BY 4.0 license - https://creativecommons.org/licenses/by/4.0/";
+	dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+	dct:language "en" ;
+	dct:contibutor "Pompeu Casanovas", "Victor Rodriguez" .
 
 #################################################################
 #
@@ -16,7 +27,7 @@
 #################################################################
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#happensIn
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl#happensIn
 
 :happensIn rdf:type owl:ObjectProperty ;
            
@@ -33,7 +44,7 @@
 #################################################################
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#AirTransportPassengerIncident
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl#AirTransportPassengerIncident
 
 :AirTransportPassengerIncident rdf:type owl:Class ;
                                
@@ -41,7 +52,7 @@
 
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#BaggageIncident
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl#BaggageIncident
 
 :BaggageIncident rdf:type owl:Class ;
                  
@@ -51,7 +62,7 @@
 
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#BankrupcyIncident
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl#BankrupcyIncident
 
 :BankrupcyIncident rdf:type owl:Class ;
                    
@@ -61,7 +72,7 @@
 
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#CancelledFlight
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl#CancelledFlight
 
 :CancelledFlight rdf:type owl:Class ;
                  
@@ -73,7 +84,7 @@ Broader interpretation from the Court : ‘cancellation’ as meaning that is do
 
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#CustomerServiceInsatisfaction
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl#CustomerServiceInsatisfaction
 
 :CustomerServiceInsatisfaction rdf:type owl:Class ;
                                
@@ -83,7 +94,7 @@ Broader interpretation from the Court : ‘cancellation’ as meaning that is do
 
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#DamagedBagagge
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl#DamagedBagagge
 
 :DamagedBagagge rdf:type owl:Class ;
                 
@@ -93,7 +104,7 @@ Broader interpretation from the Court : ‘cancellation’ as meaning that is do
 
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#DelayedBaggage
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl#DelayedBaggage
 
 :DelayedBaggage rdf:type owl:Class ;
                 
@@ -103,7 +114,7 @@ Broader interpretation from the Court : ‘cancellation’ as meaning that is do
 
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#DelayedFlight
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl#DelayedFlight
 
 :DelayedFlight rdf:type owl:Class ;
                
@@ -113,7 +124,7 @@ Broader interpretation from the Court : ‘cancellation’ as meaning that is do
 
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#DeniedFlight
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl#DeniedFlight
 
 :DeniedFlight rdf:type owl:Class ;
               
@@ -123,7 +134,7 @@ Broader interpretation from the Court : ‘cancellation’ as meaning that is do
 
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#DestroyedBagagge
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl#DestroyedBagagge
 
 :DestroyedBagagge rdf:type owl:Class ;
                   
@@ -133,7 +144,7 @@ Broader interpretation from the Court : ‘cancellation’ as meaning that is do
 
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#Downgrading
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl#Downgrading
 
 :Downgrading rdf:type owl:Class ;
              
@@ -143,13 +154,13 @@ Broader interpretation from the Court : ‘cancellation’ as meaning that is do
 
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#Event
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl#Event
 
 :Event rdf:type owl:Class .
 
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#FlightIncident
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl#FlightIncident
 
 :FlightIncident rdf:type owl:Class ;
                 
@@ -159,7 +170,7 @@ Broader interpretation from the Court : ‘cancellation’ as meaning that is do
 
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#FollowingDayDelayDeparture
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl#FollowingDayDelayDeparture
 
 :FollowingDayDelayDeparture rdf:type owl:Class ;
                             
@@ -169,7 +180,7 @@ Broader interpretation from the Court : ‘cancellation’ as meaning that is do
 
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#Irresponsiveness
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl#Irresponsiveness
 
 :Irresponsiveness rdf:type owl:Class ;
                   
@@ -179,7 +190,7 @@ Broader interpretation from the Court : ‘cancellation’ as meaning that is do
 
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#LongDelayedAtArrival
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl#LongDelayedAtArrival
 
 :LongDelayedAtArrival rdf:type owl:Class ;
                       
@@ -189,7 +200,7 @@ Broader interpretation from the Court : ‘cancellation’ as meaning that is do
 
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#LongDelayedAtDeparture
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl#LongDelayedAtDeparture
 
 :LongDelayedAtDeparture rdf:type owl:Class ;
                         
@@ -199,7 +210,7 @@ Broader interpretation from the Court : ‘cancellation’ as meaning that is do
 
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#LostBaggage
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl#LostBaggage
 
 :LostBaggage rdf:type owl:Class ;
              
@@ -209,7 +220,7 @@ Broader interpretation from the Court : ‘cancellation’ as meaning that is do
 
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#SeatMisplacement
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl#SeatMisplacement
 
 :SeatMisplacement rdf:type owl:Class ;
                   
@@ -219,7 +230,7 @@ Broader interpretation from the Court : ‘cancellation’ as meaning that is do
 
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#ServiceIncident
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl#ServiceIncident
 
 :ServiceIncident rdf:type owl:Class ;
                  
@@ -229,7 +240,7 @@ Broader interpretation from the Court : ‘cancellation’ as meaning that is do
 
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#ShortDelayedAtDeparture
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl#ShortDelayedAtDeparture
 
 :ShortDelayedAtDeparture rdf:type owl:Class ;
                          
@@ -248,7 +259,7 @@ Article 6 (1) (EC) Regulation 261/2004""" .
 
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#UnfairCommercialPractices
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl#UnfairCommercialPractices
 
 :UnfairCommercialPractices rdf:type owl:Class ;
                            
@@ -258,7 +269,7 @@ Article 6 (1) (EC) Regulation 261/2004""" .
 
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#UnfairContractTerms
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl#UnfairContractTerms
 
 :UnfairContractTerms rdf:type owl:Class ;
                      
@@ -268,7 +279,7 @@ Article 6 (1) (EC) Regulation 261/2004""" .
 
 
 
-###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-217#Upgrading
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl#Upgrading
 
 :Upgrading rdf:type owl:Class ;
            
