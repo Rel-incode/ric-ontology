@@ -2,22 +2,36 @@
 
 
 <!DOCTYPE rdf:RDF [
+    <!ENTITY dct "http://purl.org/dc/terms/" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY ric "https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#" >
 ]>
 
 
 <rdf:RDF xmlns="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#"
      xml:base="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209"
+     xmlns:dct="http://purl.org/dc/terms/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl"/>
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ric="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#">
+    <owl:Ontology rdf:about="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl">
+        <owl:versionInfo>1.0.2</owl:versionInfo>
+        <dct:creator>Cristiana Santos</dct:creator>
+        <dct:title>RIC Ontology</dct:title>
+        <dct:language>en</dct:language>
+        <dct:contibutor>Pompeu Casanovas</dct:contibutor>
+        <dct:contibutor>Victor Rodriguez</dct:contibutor>
+        <dct:rights>This ontology is distributed under a Creative Commons CC-BY 4.0 license - https://creativecommons.org/licenses/by/4.0/</dct:rights>
+        <dct:date>2016-01-28</dct:date>
+        <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    </owl:Ontology>
     
 
 
@@ -32,91 +46,91 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#followsProcedure -->
+    <!-- http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#followsProcedure -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#followsProcedure">
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#EnforcementProcedure"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Passenger"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#followsProcedure">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#EnforcementProcedure"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Passenger"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasConstraint -->
+    <!-- http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#hasConstraint -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasConstraint">
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Constraint"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Right"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#hasConstraint">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Constraint"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Right"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasEnforcementProcedure -->
+    <!-- http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#hasEnforcementProcedure -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasEnforcementProcedure">
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#EnforcementProcedure"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Right"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#hasEnforcementProcedure">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#EnforcementProcedure"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Right"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasException -->
+    <!-- http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#hasException -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasException">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#hasException">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Exception"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Right"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Exception"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Right"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasLegalSource -->
+    <!-- http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#hasLegalSource -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasLegalSource">
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#LegalSource"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Right"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#hasLegalSource">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#LegalSource"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Right"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasRequisite -->
+    <!-- http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#hasRequisite -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasRequisite">
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Requite"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Right"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#hasRequisite">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Requite"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Right"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasTypeOfIncident -->
+    <!-- http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#hasTypeOfIncident -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasTypeOfIncident">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#hasTypeOfIncident">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#AirTransportPassengerIncident"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#AirTransportPassengerIncident"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#isEntitledTo -->
+    <!-- http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#isEntitledTo -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#isEntitledTo">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Passenger"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Right"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#isEntitledTo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Passenger"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Right"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#mayTrigger -->
+    <!-- http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#mayTrigger -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#mayTrigger">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#AirTransportPassengerIncident"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Right"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#mayTrigger">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#AirTransportPassengerIncident"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Right"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#subjectTo -->
+    <!-- http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#subjectTo -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#subjectTo"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#subjectTo"/>
     
 
 
@@ -131,96 +145,96 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#AirTransportPassengerIncident -->
+    <!-- http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#AirTransportPassengerIncident -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#AirTransportPassengerIncident"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#AirTransportPassengerIncident"/>
     
 
 
-    <!-- https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#BaggageIncident -->
+    <!-- http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#BaggageIncident -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#BaggageIncident">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#AirTransportPassengerIncident"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#BaggageIncident">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#AirTransportPassengerIncident"/>
     </owl:Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#BaggageLiability -->
+    <!-- http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#BaggageLiability -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#BaggageLiability">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Requite"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#BaggageLiability">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Requite"/>
     </owl:Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Constraint -->
+    <!-- http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Constraint -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Constraint"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Constraint"/>
     
 
 
-    <!-- https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#EnforcementProcedure -->
+    <!-- http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#EnforcementProcedure -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#EnforcementProcedure"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#EnforcementProcedure"/>
     
 
 
-    <!-- https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Exception -->
+    <!-- http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Exception -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Exception"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Exception"/>
     
 
 
-    <!-- https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#FlightIncident -->
+    <!-- http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#FlightIncident -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#FlightIncident">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#AirTransportPassengerIncident"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#FlightIncident">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#AirTransportPassengerIncident"/>
     </owl:Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#FurtherInterpretation -->
+    <!-- http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#FurtherInterpretation -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#FurtherInterpretation"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#FurtherInterpretation"/>
     
 
 
-    <!-- https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#LegalSource -->
+    <!-- http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#LegalSource -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#LegalSource"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#LegalSource"/>
     
 
 
-    <!-- https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Passenger -->
+    <!-- http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Passenger -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Passenger"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Passenger"/>
     
 
 
-    <!-- https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Requite -->
+    <!-- http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Requite -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Requite"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Requite"/>
     
 
 
-    <!-- https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Right -->
+    <!-- http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Right -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Right"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Right"/>
     
 
 
-    <!-- https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#ServiceIncident -->
+    <!-- http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#ServiceIncident -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#ServiceIncident">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#AirTransportPassengerIncident"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#ServiceIncident">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#AirTransportPassengerIncident"/>
     </owl:Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#TerritorialApplicability -->
+    <!-- http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#TerritorialApplicability -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#TerritorialApplicability">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Requite"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#TerritorialApplicability">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Requite"/>
     </owl:Class>
 </rdf:RDF>
 

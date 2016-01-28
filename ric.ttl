@@ -1,12 +1,22 @@
 @prefix : <http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ric: <https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @base <https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl> .
 
-<https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl> rdf:type owl:Ontology .
+<https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl> rdf:type owl:Ontology ;
+	dct:title "RIC Ontology" ;
+	dct:creator "Cristiana Santos" ;
+	owl:versionInfo "1.0.2" ;
+	dct:date "2016-01-28" ;
+	dct:rights "This ontology is distributed under a Creative Commons CC-BY 4.0 license - https://creativecommons.org/licenses/by/4.0/";
+	dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+	dct:language "en" ;
+	dct:contibutor "Pompeu Casanovas", "Victor Rodriguez" .
 
 
 #################################################################
@@ -16,7 +26,7 @@
 #################################################################
 
 
-###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#followsProcedure
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#followsProcedure
 
 :followsProcedure rdf:type owl:ObjectProperty ;
                   
@@ -26,7 +36,7 @@
 
 
 
-###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasConstraint
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#hasConstraint
 
 :hasConstraint rdf:type owl:ObjectProperty ;
                
@@ -36,7 +46,7 @@
 
 
 
-###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasEnforcementProcedure
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#hasEnforcementProcedure
 
 :hasEnforcementProcedure rdf:type owl:ObjectProperty ;
                          
@@ -46,19 +56,19 @@
 
 
 
-###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasException
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#hasException
 
 :hasException rdf:type owl:ObjectProperty ;
               
-              rdfs:subPropertyOf owl:topObjectProperty ;
-              
               rdfs:range :Exception ;
               
-              rdfs:domain :Right .
+              rdfs:domain :Right ;
+              
+              rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
-###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasLegalSource
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#hasLegalSource
 
 :hasLegalSource rdf:type owl:ObjectProperty ;
                 
@@ -68,7 +78,7 @@
 
 
 
-###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasRequisite
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#hasRequisite
 
 :hasRequisite rdf:type owl:ObjectProperty ;
               
@@ -78,17 +88,17 @@
 
 
 
-###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasTypeOfIncident
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#hasTypeOfIncident
 
 :hasTypeOfIncident rdf:type owl:ObjectProperty ;
                    
-                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:domain :AirTransportPassengerIncident ;
                    
-                   rdfs:domain :AirTransportPassengerIncident .
+                   rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
-###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#isEntitledTo
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#isEntitledTo
 
 :isEntitledTo rdf:type owl:ObjectProperty ;
               
@@ -98,7 +108,7 @@
 
 
 
-###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#mayTrigger
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#mayTrigger
 
 :mayTrigger rdf:type owl:ObjectProperty ;
             
@@ -108,7 +118,7 @@
 
 
 
-###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#subjectTo
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#subjectTo
 
 :subjectTo rdf:type owl:ObjectProperty .
 
@@ -123,13 +133,13 @@
 #################################################################
 
 
-###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#AirTransportPassengerIncident
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#AirTransportPassengerIncident
 
 :AirTransportPassengerIncident rdf:type owl:Class .
 
 
 
-###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#BaggageIncident
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#BaggageIncident
 
 :BaggageIncident rdf:type owl:Class ;
                  
@@ -137,7 +147,7 @@
 
 
 
-###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#BaggageLiability
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#BaggageLiability
 
 :BaggageLiability rdf:type owl:Class ;
                   
@@ -145,25 +155,25 @@
 
 
 
-###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Constraint
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Constraint
 
 :Constraint rdf:type owl:Class .
 
 
 
-###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#EnforcementProcedure
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#EnforcementProcedure
 
 :EnforcementProcedure rdf:type owl:Class .
 
 
 
-###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Exception
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Exception
 
 :Exception rdf:type owl:Class .
 
 
 
-###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#FlightIncident
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#FlightIncident
 
 :FlightIncident rdf:type owl:Class ;
                 
@@ -171,37 +181,37 @@
 
 
 
-###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#FurtherInterpretation
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#FurtherInterpretation
 
 :FurtherInterpretation rdf:type owl:Class .
 
 
 
-###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#LegalSource
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#LegalSource
 
 :LegalSource rdf:type owl:Class .
 
 
 
-###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Passenger
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Passenger
 
 :Passenger rdf:type owl:Class .
 
 
 
-###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Requite
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Requite
 
 :Requite rdf:type owl:Class .
 
 
 
-###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Right
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#Right
 
 :Right rdf:type owl:Class .
 
 
 
-###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#ServiceIncident
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#ServiceIncident
 
 :ServiceIncident rdf:type owl:Class ;
                  
@@ -209,7 +219,7 @@
 
 
 
-###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#TerritorialApplicability
+###  http://www.semanticweb.org/cristiana/ontologies/2016/0/untitled-ontology-209#TerritorialApplicability
 
 :TerritorialApplicability rdf:type owl:Class ;
                           
