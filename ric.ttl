@@ -13,14 +13,14 @@
 @base <https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#> .
 
 <https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#> rdf:type owl:Ontology ;
-                                                                           owl:versionInfo "1.0.2" ;
+                                                                           owl:versionInfo "1.0.3" ;
                                                                            dct:creator "Cristiana Santos" ;
                                                                            dct:title "Ontology of Relevant Legal Information in Consumer Disputes"@en ;
                                                                            dct:language "en" ;
                                                                            dct:contributor "Pompeu Casanovas" ,
                                                                                           "Victor Rodriguez" ;
                                                                            dct:rights "This ontology is distributed under a Creative Commons CC-BY 4.0 license - https://creativecommons.org/licenses/by/4.0/" ;
-                                                                           dct:date "2016-01-28" ;	
+                                                                           dct:date "2016-02-26" ;	
 																		   dct:created "2016-01-28" ;
 																		   vann:preferredNamespacePrefix "ric";				
 																		   vann:preferredNamespaceUri "https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#"; 													

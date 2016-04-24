@@ -17,8 +17,8 @@
                                                                                  dct:title "RIC-ATPI Ontology" ;
                                                                                  rdfs:comment "Ontology of Relevant Legal Information in Consumer Disputes for the Air Transport Passenger Incidents" ;
                                                                                  dct:language "en" ;
-                                                                                 dct:date "2016-01-28" ;
-                                                                                 owl:versionInfo "1.0.2" ;
+                                                                                 dct:date "2016-02-26" ;
+                                                                                 owl:versionInfo "1.0.3" ;
                                                                                  dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
 #################################################################
@@ -81,8 +81,8 @@
 
 :DamagedBagagge rdf:type owl:Class ;
                 rdfs:subClassOf :BaggageIncident ;
-                rdfs:label "Damaged Bagagge" ;
-                rdfs:comment "Physical damage to baggage and/or its contents. IATA PSCRM, Reso780" .
+                rdfs:label "Damaged Baggage" ;
+                rdfs:comment "Physical damage to baggage and/or its contents, IATA PSCRM, Reso780. It comprises all impairments to the substance of the baggage" .
 
 
 :DelayedBaggage rdf:type owl:Class ;
@@ -168,7 +168,7 @@
 :LostBaggage rdf:type owl:Class ;
              rdfs:subClassOf :BaggageIncident ;
              rdfs:label "Lost Baggage" ;
-             rdfs:comment "A piece(s) of baggage which is irretrievably lost. IATA PSCRM, Reso780" .
+             rdfs:comment "A piece of baggage which is irretrievably lost. IATA PSCRM, Reso780. A baggage delay turns into a loss of thereof if it has not arrived within 21 days (after the date on which it ought to have arrived) or the airline admits the loss, Art. 17 (2) Montreal Convention. " .
 
 
 
@@ -391,7 +391,7 @@ Article 6 (1) (EC) Regulation 261/2004"""@en .
         rdfs:label "Regulation 261/2004, Art. 10(2)a"@en .	
 		
 :montreal172 rdf:type ric:LegalSource , owl:NamedIndividual ;
-		rdfs:comment "The air carrier is liable for damage in case of destruction, loss of, or damage to, checked baggage upon condition only that the event which caused the damage took place on board of the aircraft or during any period within which the checked baggage was in the charge of the carrier. However, the air carrier is not liable if the damage resulted from the inherent defect, quality or vice of the baggage. In the case of unchecked baggage, including personal items, the carrier is liable if the damage resulted from its fault or that of its servants or agents" ;
+		rdfs:comment "The air carrier is liable for damage in case of destruction, loss or damage to checked baggage, if the event which caused the damage took place on board of the aircraft, or during any period within which the checked baggage was in the charge of the air carrier. However, the air carrier is not liable if the damage resulted from inherent defect, quality or vice of the baggage. In case of unchecked baggage, including personal items, the carrier is liable if the damage resulted from its fault or that of its servants or agents" ;
 		rdfs:label "Montreal Convention, Art. 17(2)"@en .
 
 :montreal173 rdf:type ric:LegalSource , owl:NamedIndividual ;
@@ -545,9 +545,9 @@ Article 6 (1) (EC) Regulation 261/2004"""@en .
 # INCIDENTS AS INDIVIDUALS		   
 :cancelledflight rdf:type :CancelledFlight , owl:NamedIndividual ;
 		rdfs:comment """Means the non-operation of a flight which was previously planned and on which at least one place was reserved, Art.(2)(l) (EC) Regulation 261/2004.
-		<hr>Broader interpretation from the Court: ‘cancellation’ as meaning that is does not refer exclusively to the situation in which the aeroplane in question fails to take off at all. That concept also covers the case in which an aeroplane took off but, for whatever reason, was subsequently forced to return to the airport of departure where its passengers were transferred to other flights. See Aurora Sousa Rodríguez and Others v Air France SA, Judgment in Case C-83/10, 13/10/2011"""@en;
+		<hr> Cancellation covers the event in which an aeroplane took off, but for whatever reason, was subsequently forced to return to the airport of departure where its passengers were transferred to other flights, (<a href='http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=CELEX:62010CJ0083:EN:HTML'>Case C-83/10</a>)."""@en ;
         rdfs:label "Cancelled Flight"@en .
-
+		
 :insolvency rdf:type :InsolvencyIncident, owl:NamedIndividual ;
         rdfs:label "Insolvency"@en ;
 		rdfs:comment "When an air carrier has insufficient assets to meet all debts, or being unable to pay debts as and when they are due" ;
@@ -559,7 +559,7 @@ Article 6 (1) (EC) Regulation 261/2004"""@en .
 
 :unfaircommercial rdf:type :UnfairCommercialPractices, owl:NamedIndividual ;
         rdfs:label "Unfair commercial practices"@en ;
-		rdfs:comment "Commercial practices which are unhonest practises; misleading commercial practices (such as false claims, deceiving information or leaving out important information that would affect the consumer decision to buy something); and aggressive sales techniques that harass the consumer into buying something under pressure. (Article 5 of the Directive 2005/29/EC of 11 May 2005 concerning unfair business-to-consumer commercial practices in the internal market" .
+		rdfs:comment "Unfair practises; misleading commercial practices (such as false claims, deceiving information or leaving out important information that would affect the consumer decision to buy something); and aggressive sales techniques that harass the consumer into buying something under pressure. (Article 5 of the Directive 2005/29/EC of 11 May 2005 concerning unfair business-to-consumer commercial practices in the internal market" .
 		
 :unfaircontractterms rdf:type :UnfairContractTerms, owl:NamedIndividual ;
         rdfs:label "Unfair contract terms"@en ;
@@ -567,7 +567,7 @@ Article 6 (1) (EC) Regulation 261/2004"""@en .
 	
 :insatisfaction rdf:type :CustomerServiceInsatisfaction, owl:NamedIndividual ;
         rdfs:label "Customer Service Insatisfaction"@en ;
-		rdfs:comment "Insatisfaction with the customer service provided by the airline in relation to the purchase of a service up to the point of delivery of the service.Examples: queue length, discriminatory issues related to language, nationality,quality of the food,   behavior or attitude of some of its employees" .
+		rdfs:comment "Insatisfaction with the customer service provided by the airline in relation to the purchase of a service up to the point of delivery of the service. Examples: queue length, discriminatory issues related to language, nationality, quality of the food, behaviour or attitude of some of its employees" .
 		
 :upgrading rdf:type :SeatMisplacement, owl:NamedIndividual ;
         rdfs:label "Seat Misplacement: Upgrading"@en ;
@@ -578,19 +578,21 @@ Article 6 (1) (EC) Regulation 261/2004"""@en .
         rdfs:label "Seat Misplacement: Downgrading"@en .
 	
 :damagedbaggage rdf:type :DamagedBagagge, owl:NamedIndividual ;
-		rdfs:comment "A baggage damage is a physical damage to baggage and/or its contents." ;
+		rdfs:comment "Physical damage to baggage and/or its contents,IATA Glossary. It comprises all impairments to the substance of the baggage" ;
         rdfs:label "Damaged baggage"@en .
 		
 :lostbaggage rdf:type :LostBaggage, owl:NamedIndividual ;
         rdfs:label "Lost baggage"@en ;
-		rdfs:comment "Lost baggage is a piece(s) of baggage which is irretrievably lost.".
+		rdfs:comment """Lost baggage is a piece of baggage which is irretrievably lost, IATA Glossary. 
+		A baggage delay turns into a loss of thereof if it has not arrived within 21 days (after the date on which it ought to have arrived) or the airline admits the loss, Art. 17 (2) Montreal Convention. 
+		Similar to lost baggage is the incident of missing items from the baggage. Therefore the same rules apply for those items. However, it will be hard to prove for the passenger that the specific object had been in the baggage in the first place""" .
 		
 :destroyedbaggage rdf:type :DestroyedBagagge, owl:NamedIndividual ;
-		rdfs:comment "A destroyed baggage is a baggage which became unusable" ;
+		rdfs:comment "A baggage which became unusable and cannot be used as supposed to" ;
         rdfs:label "Destroyed baggage"@en .
 		
 :delayedbaggage rdf:type :DelayedBaggage, owl:NamedIndividual ;
-        rdfs:comment "A delayed baggage is a piece(s) of baggage which fails to arrive at the airport of destination on the same flight as the passenger, but is subsequently delivered." ;
+        rdfs:comment "Piece(s) of baggage which fails to arrive at the airport of destination on the same flight as the passenger, but is subsequently delivered." ;
 		rdfs:label "Delayed baggage"@en .
 		
 :volunteerdeniedboarding rdf:type :VolunteerDeniedBoarding, owl:NamedIndividual ;
@@ -610,8 +612,8 @@ Article 6 (1) (EC) Regulation 261/2004"""@en .
 		rdfs:comment "Passengers that are denied boarding on a connecting flight due to the fact their previous flight was delayed and caused further delay by the airline"@en.
 		
 :longdelayedatarrival rdf:type :LongDelayedAtArrival, owl:NamedIndividual ;
-        rdfs:label "Delayed flight at arrival with a delay of 3 hours or more"@en ;
-		rdfs:comment "When an operating air carrier  reaches its final destination three hours or more after the scheduled arrival time (originally scheduled)" ;
+        rdfs:label "Delayed flight at arrival of 3 hours or more"@en ;
+		rdfs:comment "When an operating air carrier reaches its final destination three hours or more after the scheduled arrival time (originally scheduled)" ;
 		ric:hasLegalSource :case40207, :case43207, :case58110, :case629.
 		
 :longdelayedatdeparture rdf:type :LongDelayedAtDeparture, owl:NamedIndividual ;
@@ -642,8 +644,10 @@ Article 6 (1) (EC) Regulation 261/2004"""@en .
 
 :baggageliabilityrequisite rdf:type ric:Requisite , owl:NamedIndividual ;
 		rdfs:label "Bagagge liabily requisite"@en ;
-		rdfs:comment "For the air carrier to be liable for damage, the event that caused the destruction/loss of/damage to checked baggage, have to be taken place on board of the aircraft, or during any period the baggage was in charge of the air carrier" .
-		
+		rdfs:comment """ i) Concerning checked-in baggage, the airline is liable for all damage occurring from the time the passenger delivers his piece at the check-in counter until he receives it at the baggage reclaim, Art. 17 (2) Montreal Convention.
+		ii) Concerning hand-luggage, the airline is liable for damage if the event wich caused damage took place on board of the aircraft, or in the course of any of the operations of embarking and disembarking, Art. 17 (1). This is due to the fact that passenger is in control of the baggage prior to boarding and retains it as soon as he disembarks the aircraft""" .
+	
+	
 # CONSTRAINTS		
 
 :careconstraint1 rdf:type ric:Constraint , owl:NamedIndividual ;
@@ -724,12 +728,13 @@ Article 6 (1) (EC) Regulation 261/2004"""@en .
 		
 :interpretationbaggageliability rdf:type ric:FurtherInterpretation , owl:NamedIndividual ;	
 		rdfs:label "Further interpretation of baggage liability"@en ;
-		rdfs:comment "EU air carriers must ‘without delay, and in any event, not later than 15 days after the identity of the person entitled to compensation has been established, make such advance payments to meet immediate economic needs on a basis proportional to the hardship suffered’"@en ;
+		rdfs:comment """EU air carriers must without delay, and in any event, not later than 15 days after the identity of the person entitled to compensation has been established, make such advance payments to meet immediate economic needs on a basis proportional to the hardship suffered’.
+		In practice, airlines treat this incident in different ways. Some provide immediate cash-payments for the passenger in order to purchase the most necessary articles; others reimburse the passenger after seeing the receipts."""@en ;
 		ric:hasLegalSource :regulation8895 .
 
 :interpretationbaggageinformationrequest rdf:type ric:FurtherInterpretation , owl:NamedIndividual ;	
 		rdfs:label "Further interpretation of baggage information request"@en ;
-		rdfs:comment """ All air carriers shall, when selling carriage by air,
+		rdfs:comment """All air carriers shall, when selling carriage by air,
 		-ensure that information governing liability for passengers and their baggage, including deadlines for filing an action for compensation and the possibility of making a special declaration for baggage, is made available to passengers at all points of sale (including sale by telephone and via the Internet).
 		-provide each passenger with a written indication of the liability limits in respect of destruction, loss of or damage to baggage, and for damage occasioned by delay. """@en ;
 		ric:hasLegalSource :regulation88961 .
@@ -817,15 +822,15 @@ Article 6 (1) (EC) Regulation 261/2004"""@en .
 # ENFORCEMENT PROCEDURE
 :complainthandling rdf:type ric:EnforcementProcedure , owl:NamedIndividual ;
 		rdfs:label "Complaint handling procedure"@en ;
-        rdfs:comment """To write a complaint, a standard complaint form should be used and addressed against the air carrier and also submitted to the National Enforcement Body. 
+        rdfs:comment """To write a complaint, a standard complaint form should be filled in and addressed against the air carrier. If the air carrier fails to respond or if they reject the claim, a further step can be taken: lodging a complaint to the National Enforcement Body. <a href='http://ec.europa.eu/transport/themes/passengers/air/doc/complain_form/eu_complaint_form_en.pdf'> Complaint form</a> ); <a href='http://ec.europa.eu/transport/themes/passengers/air/doc/2004_261_national_enforcement_bodies.pdf'>NEB address</a> ;
 		Copies of the proof documents should be presented as annex to the complaint, in order to confirm the narrated facts and sustain the redress request (copies of the boarding pass, expenses, etc.)"""@en ;
 		rdfs:seeAlso <http://ec.europa.eu/transport/themes/passengers/air/doc/complain_form/eu_complaint_form_en.pdf> .
 
 :baggagecomplainthandling rdf:type ric:EnforcementProcedure , owl:NamedIndividual ;	
-		rdfs:label "Luggage complaint handling procedure"@en ;
-		rdfs:comment """The following complaint form should be used and addressed against the air carrier and also submitted to the National Enforcement Body. <a href='http://ec.europa.eu/transport/themes/passengers/air/doc/complain_form/eu_complaint_form_en.pdf'>Airline complaint form</a> ); and <a href='http://ec.europa.eu/transport/themes/passengers/air/doc/2004_261_national_enforcement_bodies.pdf'>NEB address</a>. 
-		An additional form called PIR (Property Irregularity Report) should be filled for baggage complaints, before leaving the airport (the complaint desks are located generally at the baggage pick up point). 
-		Upon completion of the report, passengers should be given a copy of it or request it.
+		rdfs:label "Baggage complaint procedure"@en ;
+		rdfs:comment """An additional form called PIR (Property Irregularity Report) should be filled for baggage complaints, before leaving the airport (the complaint desks are located generally at the baggage pick up point and shall give each passenger this PIR form). 
+		Upon completion of the form, passengers should be given a copy of it or request it.
+		The passenger must complain to the carrier forthwith after the discovery of the damage, and, at the latest, within 7 days from the date of receipt, in the case of checked baggage. In the case of delay, the complaint must be made at the latest within 21 days from the date on which the baggage have been placed at his  disposal. Every complaint must be made in writing and given or dispatched within these time period. If no complaint is made within the times aforesaid, no action shall lie against the carrier, save in the case of fraud on its part. Art. 31 Montreal Convention ;
 		Passengers  have to prove the extent of their loss. Accordingly, copies of the proof documents should be presented in annex to the complaint, in order to confirm the narrated facts and to sustain the redress request (proof of purchase for the luggage, receipt/credit card statements, boarding pass, receipts of the essential purchases expenses). 
 		Depreciation rates are applied by the airlines when calculating compensation with the rationale being that as the consumer had the item for a certain period of time they had received some beneficial use.
 		Legal Action Procedure - The time-limit to claim for damages in court proceedings is 2 years from the date of arrival of the aircraft, or from the date on which the aircraft ought to have arrived, Article 35 Montreal Convention""" .
@@ -836,12 +841,12 @@ Article 6 (1) (EC) Regulation 261/2004"""@en .
 
 :eccprocedure rdf:type ric:EnforcementProcedure , owl:NamedIndividual ;
 		rdfs:label "Complaint to the nearest ECC-Net"@en ;
-		rdfs:comment "Please see the following page. " ;
+		rdfs:comment "Please see the following link to contact the European Consumer Centre. " ;
 		rdfs:seeAlso <http://ec.europa.eu/consumers/solving_consumer_disputes/non-judicial_redress/ecc-net/index_en.htm> .
 		
 :legalactionprocedure rdf:type ric:EnforcementProcedure , owl:NamedIndividual ;
-		rdfs:comment """Follow Legal Action Procedure in courts.<hr><i>When to take the legal action</i>. When there is a delayed/cancelled/denied flight, the limitation period is determined according to the rules of each Member state on the limitation of actions, (<a href='http://curia.europa.eu/juris/document/document.jsf?docid=130243&doclang=en'>Case C-139/11</a>);
-		<i>Where to take the legal action</i>. The jurisdiction can be both at the place of departure and the place of arrival – depending on the passenger’s choice, (<a href='http://curia.europa.eu/juris/document/document.jsf?text=&docid=76299&pageIndex=0&doclang=en&mode=lst&dir=&occ=first&part=1&cid=715643'>Case C-204/08</a>)."""@en ;	
+		rdfs:comment """Follow Legal Action Procedure in courts.<hr><i>When to take legal action</i>. When there is a delayed/cancelled/denied flight, the limitation period is determined according to the rules of each Member state on the limitation of actions, (<a href='http://curia.europa.eu/juris/document/document.jsf?docid=130243&doclang=en'>Case C-139/11</a>);
+		<i>Where to take legal action</i>. The jurisdiction can be both at the place of departure and the place of arrival – depending on the passenger’s choice, (<a href='http://curia.europa.eu/juris/document/document.jsf?text=&docid=76299&pageIndex=0&doclang=en&mode=lst&dir=&occ=first&part=1&cid=715643'>Case C-204/08</a>)."""@en ;	
 		rdfs:label "Legal Action Procedure"@en .
 		
 # INCIDENTS TRIGGERING RIGHTS		 
@@ -894,21 +899,21 @@ Article 6 (1) (EC) Regulation 261/2004"""@en .
 		ric:hasEnforcementProcedure :eccprocedure .
 
 :righttoreimbursement1000sdr rdf:type ric:Right, owl:NamedIndividual ;
-		rdfs:label "Air carrier is liable for right to up to 1000 SDRs"@en ; 
+		rdfs:label "Right to up to 1000 SDRs"@en ; 
 		ric:isTriggeredBy :damagedbaggage,  :lostbaggage, :destroyedbaggage ;
 		ric:subjectTo :baggageliabilityrequisite, :interpretationdamagebaggage, :interpretationbaggageliability, :interpretationcomplainthandlingprocedure, :interpretationbaggageinformationrequest, :badbagexception  ;
 		ric:hasEnforcementProcedure :baggagecomplainthandling ;
 		ric:hasLegalSource :montreal172, :montreal222 .
 
 :righttoreimbursement1000sdrfordelay rdf:type ric:Right, owl:NamedIndividual ;
-		rdfs:label "Right to up to 1000 SDRs in case of delay"@en ;
+		rdfs:label "Right to up to 1000 SDRs"@en ;
 		ric:isTriggeredBy :delayedbaggage ;
 		ric:subjectTo :baggageliabilityrequisite, :interpretationdamagebaggage, :interpretationbaggageinformationrequest, :interpretationbaggageliability, :interpretationcomplainthandlingprocedure, :bagdamageunavoidable ;
 		ric:hasEnforcementProcedure :baggagecomplainthandling ;
 		ric:hasLegalSource :montreal172, :montreal222 .
 		
 :norightreasonabledenied rdf:type ric:Right, owl:NamedIndividual ;
-		rdfs:label "No Right"@en ;
+		rdfs:label "No right to claim"@en ;
 		ric:isTriggeredBy :deniedboardingonreasonablegrounds ;
 		ric:subjectTo :reasonablegroundsinterpretation.
 
@@ -972,7 +977,7 @@ Article 6 (1) (EC) Regulation 261/2004"""@en .
 :righttocompensationforlatearrival rdf:type ric:Right , owl:NamedIndividual ;
         rdfs:label "Right to compensation";
 		rdfs:comment "A long delay entitles passengers to the right of compensation if he reaches his/her final destination with a delay of three hours or more. The right to compensation consists of a payment of an amount of money  regarding the passenger's inconvenience of a flight disruption. The amount depends on the flight distance and on the type of flight. The compensation shall be paid in cash, by electronic bank transfer, bank orders or bank cheques or, with the signed agreement of the passenger, in travel vouchers and/or other services"@en ;
-		ric:isTriggeredBy :longdelatedatarrival ;
+		ric:isTriggeredBy :longdelayedatarrival ;
 		ric:hasLegalSource :regulation261art71, :case40207, :case5810, :case58110 ;
 		ric:hasEnforcementProcedure :complainthandling, :legalactionprocedure ;
 		ric:subjecTo :ecdraft, :righttofurthercompensationinterpretation, :arrivaltimeinterpretation, :rightsinlongdelayatarrivalinterpretation, :consequentialdamagedelayinterpretation, :bagdamageunavoidable, :extraordinarycircumstances, :extraordinarycircumstancesinterpretation1, :extraordinarycircumstancesinterpretation2, :extraordinarycircumstancesinterpretation3 .
