@@ -107,6 +107,7 @@
     <!-- https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasRequisite -->
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasRequisite">
+        <rdfs:label>has requisite</rdfs:label>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Requisite"/>
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Right"/>
     </owl:ObjectProperty>
