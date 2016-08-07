@@ -66,8 +66,20 @@
     <!-- https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#testxxx -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
-    
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/date"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/date"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/language"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/rights"/>
 
+    
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////

@@ -104,6 +104,7 @@
     <owl:Class rdf:about="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric-atpi.owl#AirTransportPassengerIncident">
         <rdfs:label>Air Transport Passenger Incident</rdfs:label>
         <rdfs:comment>Incident related to the air transport passenger domain</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Incident"/>
     </owl:Class>
     
 
