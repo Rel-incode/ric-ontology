@@ -63,6 +63,12 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#testxxx -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
