@@ -231,6 +231,7 @@
 
 Mapped to Event Ontology</rdfs:comment>
         <skos:closeMatch rdf:resource="&prov;Activity"/>
+        <skos:closeMatch rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
     </owl:Class>
     
 
