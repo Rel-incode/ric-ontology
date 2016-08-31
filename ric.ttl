@@ -18,6 +18,8 @@
                                                                             
                                                                             dct:creator "Cristiana Santos" ;
                                                                             
+                                                                            dct:date "2016-08-31" ;
+                                                                            
                                                                             owl:versionInfo "1.0.3" ;
                                                                             
                                                                             dct:rights "This ontology is distributed under a Creative Commons CC-BY 4.0 license - https://creativecommons.org/licenses/by/4.0/" ;
@@ -31,8 +33,6 @@
                                                                             dct:contributor "Pompeu Casanovas" ;
                                                                             
                                                                             dc:description "This ontology is a framework for representing relevant, legal information in a domain-neutral manner..." ;
-                                                                            
-                                                                            dct:date "2016-02-26" ;
                                                                             
                                                                             vann:preferredNamespacePrefix "ric" ;
                                                                             
@@ -79,7 +79,12 @@ skos:closeMatch rdf:type owl:AnnotationProperty .
 
 :hasEnforcementProcedure rdf:type owl:ObjectProperty ;
                          
-                         rdfs:domain :Right ;
+                         rdfs:domain [ rdf:type owl:Class ;
+                                       owl:unionOf ( :Obligation
+                                                     :Prohibition
+                                                     :Right
+                                                   )
+                                     ] ;
                          
                          rdfs:range :EnforcementProcedure .
 
@@ -105,6 +110,8 @@ skos:closeMatch rdf:type owl:AnnotationProperty .
                               owl:unionOf ( :EnforcementProcedure
                                             :Exception
                                             :FurtherInterpretation
+                                            :Obligation
+                                            :Prohibition
                                             :Requisite
                                             :Right
                                           )
@@ -144,7 +151,12 @@ skos:closeMatch rdf:type owl:AnnotationProperty .
 
 :isTriggeredBy rdf:type owl:ObjectProperty ;
                
-               rdfs:domain :Right ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( :Obligation
+                                           :Prohibition
+                                           :Right
+                                         )
+                           ] ;
                
                rdfs:range :Incident ;
                
@@ -168,7 +180,12 @@ skos:closeMatch rdf:type owl:AnnotationProperty .
 
 :subjectTo rdf:type owl:ObjectProperty ;
            
-           rdfs:domain :Right ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :Obligation
+                                       :Prohibition
+                                       :Right
+                                     )
+                       ] ;
            
            rdfs:range [ rdf:type owl:Class ;
                         owl:unionOf ( :Constraint
