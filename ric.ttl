@@ -10,212 +10,365 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@base <https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#> .
 
-<https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#> a owl:Ontology ;
-	dct:license <http://creativecommons.org/licenses/by/4.0/> ;
-	dct:creator "Cristiana Santos" ;
-	owl:versionInfo "1.0.3" ;
-	dct:rights "This ontology is distributed under a Creative Commons CC-BY 4.0 license - https://creativecommons.org/licenses/by/4.0/" ;
-	dct:contributor "Victor Rodriguez" ;
-	dct:language "en" ;
-	rdfs:comment "This ontology is a framework for representing relevant, legal information in a domain-neutral manner" ;
-	dct:contributor "Pompeu Casanovas" ;
-	dc:description "This ontology is a framework for representing relevant, legal information in a domain-neutral manner..." ;
-	dct:date "2016-02-26" ;
-	vann:preferredNamespacePrefix "ric" ;
-	dct:title "Ontology of Relevant Legal Information in Consumer Disputes"@en ;
-	vann:preferredNamespaceUri "https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#" ;
-	dct:created "2016-01-28" .
-# 
-# 
-# #################################################################
-# #
-# #    Annotation properties
-# #
-# #################################################################
-# 
-# 
-# http://www.w3.org/2004/02/skos/core#closeMatch
+<https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#> rdf:type owl:Ontology ;
+                                                                            
+                                                                            dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+                                                                            
+                                                                            dct:creator "Cristiana Santos" ;
+                                                                            
+                                                                            owl:versionInfo "1.0.3" ;
+                                                                            
+                                                                            dct:rights "This ontology is distributed under a Creative Commons CC-BY 4.0 license - https://creativecommons.org/licenses/by/4.0/" ;
+                                                                            
+                                                                            dct:contributor "Victor Rodriguez" ;
+                                                                            
+                                                                            dct:language "en" ;
+                                                                            
+                                                                            rdfs:comment "This ontology is a framework for representing relevant, legal information in a domain-neutral manner" ;
+                                                                            
+                                                                            dct:contributor "Pompeu Casanovas" ;
+                                                                            
+                                                                            dc:description "This ontology is a framework for representing relevant, legal information in a domain-neutral manner..." ;
+                                                                            
+                                                                            dct:date "2016-02-26" ;
+                                                                            
+                                                                            vann:preferredNamespacePrefix "ric" ;
+                                                                            
+                                                                            dct:title "Ontology of Relevant Legal Information in Consumer Disputes"@en ;
+                                                                            
+                                                                            vann:preferredNamespaceUri "https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#" ;
+                                                                            
+                                                                            dct:created "2016-01-28" .
 
-skos:closeMatch a owl:AnnotationProperty .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Object Properties
-# #
-# #################################################################
-# 
-# 
-# https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasConstraint
 
-:hasConstraint a owl:ObjectProperty ;
-	rdfs:domain :Right ;
-	rdfs:range :Constraint .
-# 
-# https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasEnforcementProcedure
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
 
-:hasEnforcementProcedure a owl:ObjectProperty ;
-	rdfs:domain :Right ;
-	rdfs:range :EnforcementProcedure .
-# 
-# https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasException
 
-:hasException a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain :Right ;
-	rdfs:range :Exception .
-# 
-# https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasLegalSource
+###  http://www.w3.org/2004/02/skos/core#closeMatch
 
-:hasLegalSource a owl:ObjectProperty ;
-	rdfs:domain _:genid1 .
+skos:closeMatch rdf:type owl:AnnotationProperty .
 
-_:genid1 a owl:Class ;
-	owl:unionOf _:genid6 .
 
-_:genid6 a rdf:List ;
-	rdf:first :EnforcementProcedure ;
-	rdf:rest _:genid5 .
 
-_:genid5 a rdf:List ;
-	rdf:first :Exception ;
-	rdf:rest _:genid4 .
 
-_:genid4 a rdf:List ;
-	rdf:first :FurtherInterpretation ;
-	rdf:rest _:genid3 .
 
-_:genid3 a rdf:List ;
-	rdf:first :Requisite ;
-	rdf:rest _:genid2 .
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
 
-_:genid2 a rdf:List ;
-	rdf:first :Right ;
-	rdf:rest rdf:nil .
 
-:hasLegalSource rdfs:range :LegalSource ;
-	rdfs:label "has legal source" ;
-	skos:closeMatch dct:source .
-# 
-# https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasRequisite
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasConstraint
 
-:hasRequisite a owl:ObjectProperty ;
-	rdfs:domain :Right ;
-	rdfs:range :Requisite .
-# 
-# https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasTypeOfIncident
+:hasConstraint rdf:type owl:ObjectProperty ;
+               
+               rdfs:domain :Right ;
+               
+               rdfs:range :Constraint .
 
-:hasTypeOfIncident a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain :Incident ;
-	rdfs:label "has type of incident" .
-# 
-# https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#isTriggeredBy
 
-:isTriggeredBy a owl:ObjectProperty ;
-	rdfs:domain :Right ;
-	rdfs:range :Incident ;
-	rdfs:label "is triggered by" .
-# 
-# https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#reportedIn
 
-:reportedIn a owl:ObjectProperty ;
-	rdfs:domain :Incident ;
-	rdfs:range <http://github.com/Rel-incode/cop/blob/master/cop.owl#Complaint> .
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasEnforcementProcedure
 
-<http://github.com/Rel-incode/cop/blob/master/cop.owl#Complaint> a owl:Class .
+:hasEnforcementProcedure rdf:type owl:ObjectProperty ;
+                         
+                         rdfs:domain :Right ;
+                         
+                         rdfs:range :EnforcementProcedure .
 
-:reportedIn rdfs:label "is reported in" .
-# 
-# https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#subjectTo
 
-:subjectTo a owl:ObjectProperty ;
-	rdfs:domain :Right ;
-	rdfs:range _:genid7 .
 
-_:genid7 a owl:Class ;
-	owl:unionOf _:genid10 .
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasException
 
-_:genid10 a rdf:List ;
-	rdf:first :Constraint ;
-	rdf:rest _:genid9 .
+:hasException rdf:type owl:ObjectProperty ;
+              
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              
+              rdfs:domain :Right ;
+              
+              rdfs:range :Exception .
 
-_:genid9 a rdf:List ;
-	rdf:first :Exception ;
-	rdf:rest _:genid8 .
 
-_:genid8 a rdf:List ;
-	rdf:first :FurtherInterpretation ;
-	rdf:rest rdf:nil .
 
-:subjectTo rdfs:label "subject to" .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Classes
-# #
-# #################################################################
-# 
-# 
-# http://github.com/Rel-incode/cop/blob/master/cop.owl#Complaint
-# 
-# https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Constraint
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasLegalSource
 
-:Constraint a owl:Class ;
-	rdfs:comment "Limitations to the exercise of the legal right, conveyed in hard or soft law" ;
-	rdfs:label "Constraint" .
-# 
-# https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#EnforcementProcedure
+:hasLegalSource rdf:type owl:ObjectProperty ;
+                
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( :EnforcementProcedure
+                                            :Exception
+                                            :FurtherInterpretation
+                                            :Requisite
+                                            :Right
+                                          )
+                            ] ;
+                
+                rdfs:range :LegalSource ;
+                
+                rdfs:label "has legal source" ;
+                
+                skos:closeMatch dct:source .
 
-:EnforcementProcedure a owl:Class ;
-	rdfs:comment "Consist in procedures to enforce the legal rights, such as handling complaint procedures and filling a claim in court procedures" ;
-	rdfs:label "Enforcement Procedure" .
-# 
-# https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Exception
 
-:Exception a owl:Class ;
-	rdfs:comment "Excluding facts or norms to the entitlement of the right" ;
-	rdfs:label "Exception" .
-# 
-# https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#FurtherInterpretation
 
-:FurtherInterpretation a owl:Class ;
-	rdfs:comment "Additional relevant information related to the legal right" ;
-	rdfs:label "Further Interpretation" .
-# 
-# https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Incident
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasRequisite
 
-:Incident a owl:Class ;
-	rdfs:comment """Incidents are events, wich are \"certain useful and relevant patterns of world changes\", An Ontology for Describing Security Events, H Fani, E Bagheri
+:hasRequisite rdf:type owl:ObjectProperty ;
+              
+              rdfs:domain :Right ;
+              
+              rdfs:range :Requisite .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#hasTypeOfIncident
+
+:hasTypeOfIncident rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   
+                   rdfs:domain :Incident ;
+                   
+                   rdfs:label "has type of incident" .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#isTriggeredBy
+
+:isTriggeredBy rdf:type owl:ObjectProperty ;
+               
+               rdfs:domain :Right ;
+               
+               rdfs:range :Incident ;
+               
+               rdfs:label "is triggered by" .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#reportedIn
+
+:reportedIn rdf:type owl:ObjectProperty ;
+            
+            rdfs:domain :Incident ;
+            
+            rdfs:range <http://github.com/Rel-incode/cop/blob/master/cop.owl#Complaint> ;
+            
+            rdfs:label "is reported in" .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#subjectTo
+
+:subjectTo rdf:type owl:ObjectProperty ;
+           
+           rdfs:domain :Right ;
+           
+           rdfs:range [ rdf:type owl:Class ;
+                        owl:unionOf ( :Constraint
+                                      :Exception
+                                      :FurtherInterpretation
+                                    )
+                      ] ;
+           
+           rdfs:label "subject to" .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://github.com/Rel-incode/cop/blob/master/cop.owl#Complaint
+
+<http://github.com/Rel-incode/cop/blob/master/cop.owl#Complaint> rdf:type owl:Class .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Constraint
+
+:Constraint rdf:type owl:Class ;
+            
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasLegalSource ;
+                              owl:someValuesFrom :LegalSource
+                            ] ;
+            
+            rdfs:comment "Limitations to the exercise of the legal right, conveyed in hard or soft law" ;
+            
+            rdfs:label "Constraint" .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#EnforcementProcedure
+
+:EnforcementProcedure rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasLegalSource ;
+                                        owl:someValuesFrom :LegalSource
+                                      ] ;
+                      
+                      rdfs:comment "Consist in procedures to enforce the legal rights, such as handling complaint procedures and filling a claim in court procedures" ;
+                      
+                      rdfs:label "Enforcement Procedure" .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Exception
+
+:Exception rdf:type owl:Class ;
+           
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasLegalSource ;
+                             owl:someValuesFrom :LegalSource
+                           ] ;
+           
+           rdfs:comment "Excluding facts or norms to the entitlement of the right" ;
+           
+           rdfs:label "Exception" .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#FurtherInterpretation
+
+:FurtherInterpretation rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasLegalSource ;
+                                         owl:someValuesFrom :LegalSource
+                                       ] ;
+                       
+                       rdfs:comment "Additional relevant information related to the legal right" ;
+                       
+                       rdfs:label "Further Interpretation" .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Incident
+
+:Incident rdf:type owl:Class ;
+          
+          rdfs:comment """Incidents are events, wich are \"certain useful and relevant patterns of world changes\", An Ontology for Describing Security Events, H Fani, E Bagheri
 
 Mapped to Event Ontology""" ;
-	rdfs:label "Incident" ;
-	skos:closeMatch prov:Activity .
-# 
-# https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#LegalSource
+          
+          rdfs:label "Incident" ;
+          
+          skos:closeMatch prov:Activity .
 
-:LegalSource a owl:Class ;
-	rdfs:comment "Any fact that embeds normative propositions and makes them legally valid by virtue of such an embedment. SARTOR, Giovanni, Fundamental Legal Concepts: A Formal and Teleological Characterisation, European University Institute,EUI LAW; 2006/11" ;
-	rdfs:label "Legal Source" .
-# 
-# https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Requisite
 
-:Requisite a owl:Class ;
-	rdfs:comment "Legal requirements for the rights to be entitled" ;
-	rdfs:label "Requisite" .
-# 
-# https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Right
 
-:Right a owl:Class ;
-	rdfs:comment """\"A legal position by which an Agent is entitled to obtain something from another Agent , under specified circumstances, through an enforcement explicited either in a Law, Contract , etc.\", http://www.loa-cnr.it/ontologies/CLO/CoreLegal.owl
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#LegalSource
+
+:LegalSource rdf:type owl:Class ;
+             
+             rdfs:comment "Any fact that embeds normative propositions and makes them legally valid by virtue of such an embedment. SARTOR, Giovanni, Fundamental Legal Concepts: A Formal and Teleological Characterisation, European University Institute,EUI LAW; 2006/11" ;
+             
+             rdfs:label "Legal Source" .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Obligation
+
+:Obligation rdf:type owl:Class ;
+            
+            rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :hasLegalSource ;
+                                                     owl:someValuesFrom :LegalSource
+                                                   ]
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :hasRequisite ;
+                                                     owl:someValuesFrom :Requisite
+                                                   ]
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :isTriggeredBy ;
+                                                     owl:someValuesFrom :Incident
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ;
+            
+            rdfs:comment "’The proposition expressing the obligation to perform a certain action is true whenever optimal practical cognition would lead one to have the intention of accomplishing that action" .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Prohibition
+
+:Prohibition rdf:type owl:Class ;
+             
+             rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :hasLegalSource ;
+                                                      owl:someValuesFrom :LegalSource
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :hasRequisite ;
+                                                      owl:someValuesFrom :Requisite
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :isTriggeredBy ;
+                                                      owl:someValuesFrom :Incident
+                                                    ]
+                                                  ) ;
+                               rdf:type owl:Class
+                             ] ;
+             
+             rdfs:comment "A legal restriction against the use of something or against certain conduct, described in a legal norm" .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Requisite
+
+:Requisite rdf:type owl:Class ;
+           
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasLegalSource ;
+                             owl:someValuesFrom :LegalSource
+                           ] ;
+           
+           rdfs:comment "Legal requirements for the rights to be entitled" ;
+           
+           rdfs:label "Requisite" .
+
+
+
+###  https://raw.githubusercontent.com/Rel-incode/ric-ontology/master/ric.owl#Right
+
+:Right rdf:type owl:Class ;
+       
+       rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                owl:onProperty :hasLegalSource ;
+                                                owl:someValuesFrom :LegalSource
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :hasRequisite ;
+                                                owl:someValuesFrom :Requisite
+                                              ]
+                                            ) ;
+                         rdf:type owl:Class
+                       ] ;
+       
+       rdfs:comment """\"A legal position by which an Agent is entitled to obtain something from another Agent , under specified circumstances, through an enforcement explicited either in a Law, Contract , etc.\", http://www.loa-cnr.it/ontologies/CLO/CoreLegal.owl
 
 
 Rights \"are a social advantage (Bentham), a free choice (Hart), or a protected interest (MacCormick); it justifies the imposition of duties, the entitlement of claims and privileges, the transfer of powers. In this wide sense, it includes subjective rights. In the strict sense, it is, according to the Hofheldian definition, correlative of Duty and better expressed by Claim, which is a subclass of Legal Right\"
 A. Gangemi, M.-T. Sagri, and D. Tiscornia, A Constructive Framework for Legal Ontologies, Law and the Semantic Web, Volume 3369 of the series Lecture Notes in Computer Science pp 97-124. p. 112.""" ;
-	rdfs:label "Right" .
-# 
-# Generated by the OWL API (version 4.2.1.20160306-0033) https://github.com/owlcs/owlapi
+       
+       rdfs:label "Right" .
+
+
+
+
+###  Generated by the OWL API (version 4.2.1.20160306-0033) https://github.com/owlcs/owlapi
+
